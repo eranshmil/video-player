@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+
+import '../styles.scss';
 
 @Component({
-  selector: 'app-root',
+  selector: '#app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
