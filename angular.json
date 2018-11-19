@@ -27,7 +27,10 @@
               "projects/video-player-ui/src/favicon.ico",
               "projects/video-player-ui/src/assets"
             ],
-            "styles": ["projects/video-player-ui/src/styles.scss"],
+            "styles": [
+              "node_modules/videogular2/fonts/videogular.css",
+              "projects/video-player-ui/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,7 +84,10 @@
             "polyfills": "projects/video-player-ui/src/polyfills.ts",
             "tsConfig": "projects/video-player-ui/tsconfig.spec.json",
             "karmaConfig": "projects/video-player-ui/karma.conf.js",
-            "styles": ["projects/video-player-ui/src/styles.scss"],
+            "styles": [
+              "node_modules/videogular2/fonts/videogular.css",
+              "projects/video-player-ui/src/styles.scss"
+            ],
             "scripts": [],
             "assets": [
               "projects/video-player-ui/src/favicon.ico",

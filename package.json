@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:electron": "ng serve video-player",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +25,7 @@
     "@electron-schematics/schematics": "^0.6.0",
     "core-js": "^2.5.7",
     "rxjs": "~6.3.3",
+    "videogular2": "^6.3.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -34,6 +36,7 @@
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-angular": "^7.1.2",
     "@electron-schematics/build-electron": "^0.6.0",
+    "@types/core-js": "^2.5.0",
     "@types/jasmine": "~3.3.0",
     "@types/jasminewd2": "~2.0.6",
     "@types/node": "~10.12.9",

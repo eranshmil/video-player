@@ -5,13 +5,9 @@ const isDevelopment = process.argv.includes('--serve');
 export let mainWindow: BrowserWindow | null = null;
 
 function initWindow() {
-  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-
   mainWindow = new BrowserWindow({
     x: 0,
     y: 0,
-    width,
-    height,
     show: false
   });
 
