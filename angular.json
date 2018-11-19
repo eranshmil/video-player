@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "video-player-ui",
+  "defaultProject": "video-player",
   "newProjectRoot": "projects",
   "projects": {
     "video-player-ui": {
@@ -127,6 +127,40 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "video-player": {
+      "root": "projects/video-player/",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@electron-schematics/build-electron:build",
+          "options": {
+            "relatedApp": "video-player-ui",
+            "webpackConfig": "projects/video-player/webpack.config.js"
+          }
+        },
+        "serve": {
+          "builder": "@electron-schematics/build-electron:start",
+          "options": {
+            "browserTarget": "video-player-ui:serve",
+            "webpackConfig": "projects/video-player/webpack.config.js"
+          },
+          "configurations": {
+            "dev": {
+              "browserTarget": "video-player-ui:serve:dev"
+            },
+            "production": {
+              "browserTarget": "video-player-ui:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/video-player/tsconfig.electron.json"
           }
         }
       }

@@ -1,0 +1,12 @@
+{
+    "directories": {
+        "app": "./dist/video-player"
+    },
+    "files": [
+        "**/*",
+        {
+            "from": "../video-player-ui",
+            "filter": ["**/*"]
+        }
+    ]
+}
