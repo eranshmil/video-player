@@ -2,6 +2,8 @@
 
 An electron video player and subtitles editor. (Work in progress)
 
+![Screenshot](./docs/assets/screenshot.png)
+
 ## Development
 
 ```sh
@@ -17,3 +19,7 @@ yarn start:electron
 # Serving in browser
 yarn start
 ```
+
+## Features
+
+1. Open video file via drag & drop / menu.

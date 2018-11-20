@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'video-player-ui'`, () => {
+  it(`should have as title 'Video Player'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('video-player-ui');
+    expect(app.title).toEqual('Video Player');
   });
 
   it('should render title in a h1 tag', () => {
