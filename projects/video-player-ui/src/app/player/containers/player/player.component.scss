@@ -1,3 +1,6 @@
+@import '_variables.scss';
+
 vg-player {
   height: 100vh;
+  background-color: $background-color;
 }

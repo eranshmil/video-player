@@ -1,3 +1,13 @@
+@import '_variables.scss';
+
 body {
   margin: 0;
+  background-color: $background-color;
+}
+
+// Fix outline issues in videoangular2.
+vg-scrub-bar .scrubBar,
+vg-track-selector select.trackSelector,
+vg-volume .volumeBar {
+  outline: none;
 }

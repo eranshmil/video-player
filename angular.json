@@ -31,7 +31,10 @@
               "node_modules/videogular2/fonts/videogular.css",
               "projects/video-player-ui/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/video-player-ui/src/scss"]
+            }
           },
           "configurations": {
             "production": {
@@ -92,7 +95,10 @@
             "assets": [
               "projects/video-player-ui/src/favicon.ico",
               "projects/video-player-ui/src/assets"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/video-player-ui/src/scss"]
+            }
           }
         },
         "lint": {

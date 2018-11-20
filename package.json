@@ -24,6 +24,7 @@
     "@angular/router": "~7.0.4",
     "@electron-schematics/schematics": "^0.6.0",
     "core-js": "^2.5.7",
+    "ngx-electron": "^2.0.0",
     "rxjs": "~6.3.3",
     "videogular2": "^6.3.0",
     "zone.js": "~0.8.26"
