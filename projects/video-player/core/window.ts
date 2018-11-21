@@ -55,7 +55,6 @@ function initMenu() {
               },
               function(files) {
                 if (files !== undefined) {
-                  console.log(files);
                   ipcMain.emit(EventTypes.openFile, ...files);
                 }
               }
@@ -98,6 +97,12 @@ function initWindow() {
   initMenu();
 }
 
+function initRendererListener() {
+  ipcMain.on(EventTypes.showError, (event, args) =>
+    dialog.showMessageBox(mainWindow, { message: args[0] })
+  );
+}
+
 export function createWindow() {
   initWindow();
 
@@ -107,4 +112,6 @@ export function createWindow() {
   } else {
     mainWindow.loadFile('index.html');
   }
+
+  initRendererListener();
 }

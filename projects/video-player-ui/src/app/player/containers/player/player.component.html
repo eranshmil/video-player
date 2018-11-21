@@ -1,4 +1,4 @@
-<vg-player *ngIf="src">
+<vg-player *ngIf="src" (onPlayerReady)="onPlayerReady($event)">
   <vg-overlay-play></vg-overlay-play>
   <vg-buffering></vg-buffering>
 
