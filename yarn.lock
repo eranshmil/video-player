@@ -543,10 +543,10 @@
   dependencies:
     find-up "^2.1.0"
 
-"@electron-schematics/build-electron@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@electron-schematics/build-electron/-/build-electron-0.6.0.tgz#c19a7473a7bc0668559a62bdefc80663fa33e2f5"
-  integrity sha512-BxqRPN6A885VHYERKq7qa5d2wqlEM8BpFyE4kjQ332Q82t0V9v5hlnPFOPEfsg/stY2/tOCADvXVRZACvEIcJQ==
+"@electron-schematics/build-electron@^0.6.5":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@electron-schematics/build-electron/-/build-electron-0.6.5.tgz#f2a901db8aa13a0ea94b7487d463e78a067fbc5a"
+  integrity sha512-5VoGWEY5rVzwaG0SoObWqVnvb/Zbq0FLRgVxsliHO/lzds6CnL1WmPha5SJR053cqV/dJk3PlhcPr8DyJEZOAA==
   dependencies:
     "@angular-devkit/architect" "^0.8.4"
     "@angular-devkit/build-angular" "^0.8.4"
@@ -554,10 +554,10 @@
     electron "^3.0.0"
     electron-builder "^20.28.4"
 
-"@electron-schematics/schematics@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@electron-schematics/schematics/-/schematics-0.6.0.tgz#752bf38fc8288f6f4c5115dbdabf105d10ff2f04"
-  integrity sha512-WWmRUwXtxupQvIXAJL4AtxIT9HT5VGXRW/QZAAWkXSb/oN1jG0OlLd8ZckwOiyVsB3FHIP8nOZLBnc207ZTUXg==
+"@electron-schematics/schematics@^0.6.5":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@electron-schematics/schematics/-/schematics-0.6.5.tgz#b0f0d2af4788dbe6523f68400975769c0c211666"
+  integrity sha512-+1PUp5BWRYxMgIJD+TORvwuROUKG8C2ZjLoHoDBcwEJO9JSaTeWdPWkxwf+ivSgyolhhocVOE9z+1YJBynATOQ==
   dependencies:
     "@angular-devkit/core" "^0.8.4"
     "@angular-devkit/schematics" "^0.8.4"
