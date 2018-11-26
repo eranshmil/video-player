@@ -7,12 +7,16 @@ import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from 'videogular2/buffering';
 import { VgStreamingModule } from 'videogular2/streaming';
 
+import { SharedModule } from '@renderer/shared';
+
 import { PlayerComponent } from './containers/player/player.component';
 
 @NgModule({
   declarations: [PlayerComponent],
   imports: [
     CommonModule,
+
+    SharedModule,
 
     VgCoreModule,
     VgControlsModule,

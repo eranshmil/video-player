@@ -1,4 +1,10 @@
-import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  OnDestroy,
+  NgZone
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { ElectronService } from 'ngx-electron';
@@ -6,6 +12,8 @@ import { VgAPI } from 'videogular2/core';
 
 import { EventTypes } from '@common/constants';
 import { createLocalUrl } from '@common/utils';
+
+import { DialogService } from '@renderer/shared';
 
 @Component({
   selector: 'app-player',
@@ -18,7 +26,11 @@ export class PlayerComponent implements OnInit, OnDestroy {
   private _api: VgAPI;
   private _errorSubscription: Subscription;
 
-  constructor(private _electron: ElectronService) {}
+  constructor(
+    private _electron: ElectronService,
+    private _dialog: DialogService,
+    private _zone: NgZone
+  ) {}
 
   ngOnInit() {
     this._initMenuListener();
@@ -29,9 +41,8 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   private _initMenuListener() {
-    this._electron.remote.ipcMain.on(
-      EventTypes.openFile,
-      path => (this.src = createLocalUrl(path))
+    this._electron.ipcRenderer.on(EventTypes.openFile, (event, path) =>
+      this._zone.run(() => (this.src = createLocalUrl(path)))
     );
   }
 
@@ -51,9 +62,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
         this.src = null;
 
-        this._electron.ipcRenderer.send(EventTypes.showError, [
-          'Invalid video format or corrupted file'
-        ]);
+        this._dialog.showMessage('Invalid video format or corrupted file');
       });
   }
 
