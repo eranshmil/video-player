@@ -3,7 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   target: 'electron-main',
-  entry: './projects/video-player/src/main.ts',
+  entry: './projects/main/src/main.ts',
   mode: 'development',
   watch: true,
   resolve: {
@@ -22,9 +22,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [new CopyWebpackPlugin(['projects/video-player/package.json'])],
+  plugins: [new CopyWebpackPlugin(['projects/main/package.json'])],
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, '../../dist/video-player')
+    path: path.resolve(__dirname, '../../dist/main')
   }
 };

@@ -1,15 +1,15 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "video-player-ui",
+  "defaultProject": "renderer",
   "newProjectRoot": "projects",
   "cli": {
     "packageManager": "yarn"
   },
   "projects": {
-    "video-player-ui": {
-      "root": "projects/video-player-ui/",
-      "sourceRoot": "projects/video-player-ui/src",
+    "renderer": {
+      "root": "projects/renderer/",
+      "sourceRoot": "projects/renderer/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -21,30 +21,30 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/video-player-ui",
-            "index": "projects/video-player-ui/src/index.html",
-            "main": "projects/video-player-ui/src/main.ts",
-            "polyfills": "projects/video-player-ui/src/polyfills.ts",
-            "tsConfig": "projects/video-player-ui/tsconfig.app.json",
+            "outputPath": "dist/renderer",
+            "index": "projects/renderer/src/index.html",
+            "main": "projects/renderer/src/main.ts",
+            "polyfills": "projects/renderer/src/polyfills.ts",
+            "tsConfig": "projects/renderer/tsconfig.app.json",
             "assets": [
-              "projects/video-player-ui/src/favicon.ico",
-              "projects/video-player-ui/src/assets"
+              "projects/renderer/src/favicon.ico",
+              "projects/renderer/src/assets"
             ],
             "styles": [
               "node_modules/videogular2/fonts/videogular.css",
-              "projects/video-player-ui/src/styles.scss"
+              "projects/renderer/src/styles.scss"
             ],
             "scripts": [],
             "stylePreprocessorOptions": {
-              "includePaths": ["projects/video-player-ui/src/scss"]
+              "includePaths": ["projects/renderer/src/scss"]
             }
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/video-player-ui/src/environments/environment.ts",
-                  "with": "projects/video-player-ui/src/environments/environment.prod.ts"
+                  "replace": "projects/renderer/src/environments/environment.ts",
+                  "with": "projects/renderer/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -69,38 +69,38 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "video-player-ui:build"
+            "browserTarget": "renderer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "video-player-ui:build:production"
+              "browserTarget": "renderer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "video-player-ui:build"
+            "browserTarget": "renderer:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/video-player-ui/src/test.ts",
-            "polyfills": "projects/video-player-ui/src/polyfills.ts",
-            "tsConfig": "projects/video-player-ui/tsconfig.spec.json",
-            "karmaConfig": "projects/video-player-ui/karma.conf.js",
+            "main": "projects/renderer/src/test.ts",
+            "polyfills": "projects/renderer/src/polyfills.ts",
+            "tsConfig": "projects/renderer/tsconfig.spec.json",
+            "karmaConfig": "projects/renderer/karma.conf.js",
             "styles": [
               "node_modules/videogular2/fonts/videogular.css",
-              "projects/video-player-ui/src/styles.scss"
+              "projects/renderer/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
-              "projects/video-player-ui/src/favicon.ico",
-              "projects/video-player-ui/src/assets"
+              "projects/renderer/src/favicon.ico",
+              "projects/renderer/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["projects/video-player-ui/src/scss"]
+              "includePaths": ["projects/renderer/src/scss"]
             }
           }
         },
@@ -108,70 +108,70 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/video-player-ui/tsconfig.app.json",
-              "projects/video-player-ui/tsconfig.spec.json"
+              "projects/renderer/tsconfig.app.json",
+              "projects/renderer/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "video-player-ui-e2e": {
-      "root": "projects/video-player-ui-e2e/",
+    "renderer-e2e": {
+      "root": "projects/renderer-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/video-player-ui-e2e/protractor.conf.js",
-            "devServerTarget": "video-player-ui:serve"
+            "protractorConfig": "projects/renderer-e2e/protractor.conf.js",
+            "devServerTarget": "renderer:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "video-player-ui:serve:production"
+              "devServerTarget": "renderer:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "projects/video-player-ui-e2e/tsconfig.e2e.json",
+            "tsConfig": "projects/renderer-e2e/tsconfig.e2e.json",
             "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "video-player": {
-      "root": "projects/video-player/",
+    "main": {
+      "root": "projects/main/",
       "projectType": "application",
       "architect": {
         "build": {
           "builder": "@electron-schematics/build-electron:build",
           "options": {
-            "relatedApp": "video-player-ui",
-            "webpackConfig": "projects/video-player/webpack.config.js"
+            "relatedApp": "renderer",
+            "webpackConfig": "projects/main/webpack.config.js"
           }
         },
         "serve": {
           "builder": "@electron-schematics/build-electron:start",
           "options": {
-            "browserTarget": "video-player-ui:serve",
-            "webpackConfig": "projects/video-player/webpack.config.js"
+            "browserTarget": "renderer:serve",
+            "webpackConfig": "projects/main/webpack.config.js"
           },
           "configurations": {
             "dev": {
-              "browserTarget": "video-player-ui:serve:dev"
+              "browserTarget": "renderer:serve:dev"
             },
             "production": {
-              "browserTarget": "video-player-ui:serve:production"
+              "browserTarget": "renderer:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "projects/video-player/tsconfig.electron.json"
+            "tsConfig": "projects/main/tsconfig.electron.json"
           }
         }
       }

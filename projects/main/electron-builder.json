@@ -1,0 +1,12 @@
+{
+  "directories": {
+    "app": "./dist/main"
+  },
+  "files": [
+    "**/*",
+    {
+      "from": "../renderer",
+      "filter": ["**/*"]
+    }
+  ]
+}

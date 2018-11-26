@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:electron": "ng serve video-player",
+    "start:electron": "ng serve main",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
