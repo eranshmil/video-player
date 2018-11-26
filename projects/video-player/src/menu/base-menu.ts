@@ -1,6 +1,7 @@
 import { MenuItemConstructorOptions, dialog } from 'electron';
 
 import { EventTypes } from '@common/constants';
+import { ALLOWED_EXTENSIONS } from '@common/utils';
 import { isDevMode } from '@main/utils';
 import { Shortcuts } from '@main/config/shortcuts';
 import { getMainWindow } from '@main/core';
@@ -12,7 +13,7 @@ function openFile() {
     browserWindow,
     {
       properties: ['openFile'],
-      filters: [{ name: 'Videos', extensions: ['mp4'] }]
+      filters: [{ name: 'Videos', extensions: ALLOWED_EXTENSIONS }]
     },
     files => {
       if (files) {

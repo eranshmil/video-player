@@ -22,8 +22,9 @@ import { DialogService } from '@renderer/shared';
 })
 export class PlayerComponent implements OnInit, OnDestroy {
   public src: string;
+  public srcSubtitles: string;
 
-  private _api: VgAPI;
+  private _vgApi: VgAPI;
   private _errorSubscription: Subscription;
 
   constructor(
@@ -42,18 +43,18 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
   private _initMenuListener() {
     this._electron.ipcRenderer.on(EventTypes.openFile, (event, path) =>
-      this._zone.run(() => (this.src = createLocalUrl(path)))
+      this._changeSources(path)
     );
   }
 
   public onPlayerReady(api: VgAPI) {
-    this._api = api;
+    this._vgApi = api;
 
     this._initMediaErrorHandler();
   }
 
   private _initMediaErrorHandler() {
-    this._errorSubscription = this._api
+    this._errorSubscription = this._vgApi
       .getDefaultMedia()
       .subscriptions.error.subscribe(event => {
         if (!this.src) {
@@ -75,10 +76,24 @@ export class PlayerComponent implements OnInit, OnDestroy {
   onDrop(event: DragEvent) {
     event.preventDefault();
 
-    if (event.dataTransfer.files && event.dataTransfer.files[0]) {
-      const { path } = event.dataTransfer.files[0];
+    const { files } = event.dataTransfer;
 
-      this.src = createLocalUrl(path);
+    // todo: support opening multiple files at once
+    if (!files || !files[0]) {
+      return;
+    }
+
+    this._changeSources(files[0].path);
+  }
+
+  private _changeSources(path: string) {
+    const fileLocalUrl = createLocalUrl(path);
+
+    if (fileLocalUrl.endsWith('.vtt')) {
+      this.srcSubtitles = fileLocalUrl;
+    } else {
+      this.src = fileLocalUrl;
+      this.srcSubtitles = null;
     }
   }
 }

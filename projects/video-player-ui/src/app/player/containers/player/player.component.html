@@ -26,7 +26,9 @@
     #media
     preload="auto"
     crossorigin
-    [vgDash]="src"
     [vgHls]="src"
-  ></video>
+    [vgDash]="src"
+  >
+    <track *ngIf="srcSubtitles" kind="subtitles" [src]="srcSubtitles" default />
+  </video>
 </vg-player>

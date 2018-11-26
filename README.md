@@ -23,3 +23,4 @@ yarn start
 ## Features
 
 1. Open video file via drag & drop / menu.
+1. Open subtitle file via drag & drop / menu. (Currently, only vtt is supported)
