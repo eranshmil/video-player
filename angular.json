@@ -3,6 +3,9 @@
   "version": 1,
   "defaultProject": "video-player-ui",
   "newProjectRoot": "projects",
+  "cli": {
+    "packageManager": "yarn"
+  },
   "projects": {
     "video-player-ui": {
       "root": "projects/video-player-ui/",

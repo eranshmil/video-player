@@ -13,7 +13,9 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "@common/*": ["projects/common/*"]
+      "@common/*": ["projects/common/*"],
+      "@main/*": ["projects/video-player/*"],
+      "@renderer/*": ["projects/video-player-ui/src/app/*"]
     }
   }
 }
