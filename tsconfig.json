@@ -14,7 +14,7 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@common/*": ["projects/common/*"],
-      "@main/*": ["projects/video-player/*"],
+      "@main/*": ["projects/video-player/src/*"],
       "@renderer/*": ["projects/video-player-ui/src/app/*"]
     }
   }
