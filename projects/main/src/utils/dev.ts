@@ -1,3 +1,3 @@
 export function isDevMode(): boolean {
-  return process.argv.includes('--serve');
+  return process.env.ELECTRON_SERVE === 'true';
 }

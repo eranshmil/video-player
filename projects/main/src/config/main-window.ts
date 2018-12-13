@@ -1,11 +1,13 @@
 import { BrowserWindowConstructorOptions } from 'electron';
 
+import { isDevMode } from '@main/utils';
+
 export const mainWindowOptions: BrowserWindowConstructorOptions = {
   x: 0,
   y: 0,
   show: false,
-  // todo: find secure approach
   webPreferences: {
-    webSecurity: false
+    // disable web security in dev to load local file over file:// protocol
+    webSecurity: !isDevMode()
   }
 };

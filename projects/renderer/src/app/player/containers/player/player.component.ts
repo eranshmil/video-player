@@ -43,7 +43,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
   private _initMenuListener() {
     this._electron.ipcRenderer.on(EventTypes.openFile, (event, path) =>
-      this._changeSources(path)
+      this._zone.run(() => this._changeSources(path))
     );
   }
 
